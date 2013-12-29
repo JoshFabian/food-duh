@@ -21,6 +21,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use Foundation Responsive Framework
 gem 'foundation-rails'
 
+# Use HAML for html
+gem "haml-rails"
+
 # Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use (http://caniuse.com/) website.
 gem "autoprefixer-rails"
 
