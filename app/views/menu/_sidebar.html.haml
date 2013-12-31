@@ -1,0 +1,79 @@
+.sidebar
+  .fooda-logo.show-for-medium-up
+    = link_to "#" do
+      = image_tag "logo.png", :class => "logo-img"
+
+  .sidebar-grid-filters.show-for-small-only
+    = render :partial => "gridFilters"
+
+  .event-details
+    %h6.sidebar-title Your Event Details
+    .row
+      .label-icon
+        %label{for: "right-label"}= image_tag "icons/location.svg"
+      .sidebar-input
+        %input#right-label{placeholder: "Zip Code (optional)", type: "text"}
+    .row
+      .label-icon
+        %label{for: "right-label"}= image_tag "icons/guests.svg"
+      .sidebar-input
+        %input#right-label{placeholder: "Number of Guests (required)", type: "text"}
+    .row.collapse
+      .label-icon.date
+        %label{for: "right-label"}= image_tag "icons/date.svg"
+      .postfix-input
+        %input{placeholder: "Date (required)", type: "text"}
+      .postfix-span
+        %span.postfix.radius <i class="fa fa-calendar"></i> 
+    .row.collapse
+      .label-icon
+        %label{for: "right-label"}= image_tag "icons/time.svg"
+      .postfix-input
+        %input{placeholder: "Time (required)", type: "text"}
+      .postfix-span
+        %span.postfix.radius <i class="fa fa-clock-o"></i>
+
+  .menu-filters
+    %h6.sidebar-title Menu Filters
+    .row
+      %a{href: "#"}
+        .label-icon
+          %label{for: "right-label"}= image_tag "icons/restaurant.svg"
+        .sidebar-accordian
+          Restaurant
+    .row
+      %a{href: "#"}
+        .label-icon
+          %label{for: "right-label"}= image_tag "icons/cuisine.svg"
+        .sidebar-accordian
+          Cuisine
+    .row
+      %a{href: "#"}
+        .label-icon.budget
+          %label{for: "right-label"}= image_tag "icons/budget.svg"
+        .sidebar-accordian
+          Budget
+    .row
+      %a{href: "#"}
+        .label-icon.budget
+          %label{for: "right-label"}= image_tag "icons/meal.svg"
+        .sidebar-accordian
+          Meal Period
+    .row
+      %a{href: "#"}
+        .label-icon.budget
+          %label{for: "right-label"}= image_tag "icons/restrictions.svg"
+        .sidebar-accordian
+          Dietary Restrictions
+    .row
+      %a{href: "#"}
+        .label-icon.budget
+          %label{for: "right-label"}= image_tag "icons/tags.svg"
+        .sidebar-accordian
+          Food Tags
+    .row
+      %a{href: "#"}
+        .label-icon.budget
+          %label{for: "right-label"}= image_tag "icons/pricing.svg"
+        .sidebar-accordian
+          Pricing

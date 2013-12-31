@@ -1,7 +1,7 @@
 @import "globals/all";
 @import "foundation/components/grid";
 
-.l-sidebar {
+.sidebar {
 	@include grid-column(4);
 	padding-top: 30px;
 	@media (min-width: 790px) {
@@ -54,7 +54,7 @@
 		}
 	}
 
-
+	// Form Input fields found in sidebar, such as 'zip code'
 	.sidebar-input {
 		@include grid-column(11);
 		padding-right: 0;
@@ -67,6 +67,7 @@
 		}
 	}
 
+	// Sidebar Form Fields that contain an attached icon after the input
 	.postfix-input {
 		@include grid-column(9);
 		padding-left: 10px;
@@ -78,7 +79,6 @@
 			margin-bottom: 10px;
 		}
 	}
-
 	.postfix-span {
 		@include grid-column(2);
 		padding: 0px;
@@ -88,6 +88,7 @@
 		}
 	}
 
+	// Accordian style filter menu 
 	.sidebar-accordian {
 		@include grid-column(11);
 		padding-right: 0;
@@ -107,13 +108,106 @@
 	}
 }
 
-.l-main-content {
+
+
+// Main Content, containing the restaurant location grid
+.main-content {
 	@include grid-column(8);
 	background-color: #fff;
 	border-left: 1px solid #e2e2e4;
 	min-height: 300px;
+	padding-left: 0;
 	@media (max-width: 660px) {
 		width: 100%;
 		border-left: none;
+	}
+}
+
+.grid-header {
+	@include grid-column(8);
+	background: #fff;
+	background: rgba(255,255,255,.98);
+	position: fixed;
+	z-index: 999;
+	padding-bottom: 9px;
+	padding-top: 20px;
+	margin-top: -4px;
+	padding-left: 15px;
+	border-top: 4px solid #169998;
+	@media (max-width: 660px) {
+		width: 100%;
+		position: relative;
+	}
+
+	.grid-logo {
+		text-align: center;
+		margin-bottom: 10px;
+		img {
+			width: 75%;
+			max-width: 180px;
+		}
+	}
+
+	.grid-filters {
+		display: inline-block;
+	}
+
+	.left-off-canvas-toggle {
+		border: 1px solid;
+		border-radius: 3px;
+		padding: 5px 10px;
+		float: left;
+	}
+
+	.shopping-cart {
+		display: inline-block;
+		float: right;
+		background: #169998;
+		border-radius: 4px;
+		height: 30px;
+		width: 30px;
+		text-align: center;
+		margin-right: 15px;
+		@media (min-width: 640px) and (max-width: 984px) {
+			margin-right: 0;
+		}
+		@media (max-width: 640px) {
+			position: absolute;
+			top: -3px;
+			right: -15px;
+		}
+		img {
+			width: 75%;
+			padding-top: 5px;
+		}
+	}
+
+	.user-login {
+		display: inline-block;
+		float: right;
+		margin-bottom: 5px;
+		@media (min-width: 640px) and (max-width: 964px) {
+			float: left;
+		}
+	}
+}
+
+.restaurant-grid {
+	padding-left: 15px;
+	margin-top: 80px;
+	@media (max-width: 963px) {
+		margin-top: 95px;
+	}
+}
+
+// Filters shown on mobile
+.left-off-canvas-menu {
+	background: $foodaGrey;
+	.sidebar {
+		width: 100%;
+		padding-left: 10px;
+		@media (max-width: 660px) {
+			display: block;
+		}
 	}
 }

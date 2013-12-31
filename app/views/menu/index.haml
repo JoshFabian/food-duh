@@ -1,99 +1,31 @@
-.l-sidebar
-  .fooda-logo
-    = link_to "#" do
-      = image_tag "logo.png", :class => "logo-img"
-  .event-details
-    %h6.sidebar-title Your Event Details
-    .row
-      .label-icon
-        %label{for: "right-label"}= image_tag "icons/location.svg"
-      .sidebar-input
-        %input#right-label{placeholder: "Zip Code (optional)", type: "text"}
-    .row
-      .label-icon
-        %label{for: "right-label"}= image_tag "icons/guests.svg"
-      .sidebar-input
-        %input#right-label{placeholder: "Number of Guests (required)", type: "text"}
-    .row.collapse
-      .label-icon.date
-        %label{for: "right-label"}= image_tag "icons/date.svg"
-      .postfix-input
-        %input{placeholder: "Date (required)", type: "text"}
-      .postfix-span
-        %span.postfix.radius <i class="fa fa-calendar"></i> 
-    .row.collapse
-      .label-icon
-        %label{for: "right-label"}= image_tag "icons/time.svg"
-      .postfix-input
-        %input{placeholder: "Time (required)", type: "text"}
-      .postfix-span
-        %span.postfix.radius <i class="fa fa-clock-o"></i>
+= render :partial => "sidebar"
 
-  .menu-filters
-    %h6.sidebar-title Menu Filters
-    .row
-      %a{href: "#"}
-        .label-icon
-          %label{for: "right-label"}= image_tag "icons/restaurant.svg"
-        .sidebar-accordian
-          Restaurant
-    .row
-      %a{href: "#"}
-        .label-icon
-          %label{for: "right-label"}= image_tag "icons/cuisine.svg"
-        .sidebar-accordian
-          Cuisine
-    .row
-      %a{href: "#"}
-        .label-icon.budget
-          %label{for: "right-label"}= image_tag "icons/budget.svg"
-        .sidebar-accordian
-          Budget
-    .row
-      %a{href: "#"}
-        .label-icon.budget
-          %label{for: "right-label"}= image_tag "icons/meal.svg"
-        .sidebar-accordian
-          Meal Period
-    .row
-      %a{href: "#"}
-        .label-icon.budget
-          %label{for: "right-label"}= image_tag "icons/restrictions.svg"
-        .sidebar-accordian
-          Dietary Restrictions
-    .row
-      %a{href: "#"}
-        .label-icon.budget
-          %label{for: "right-label"}= image_tag "icons/tags.svg"
-        .sidebar-accordian
-          Food Tags
-    .row
-      %a{href: "#"}
-        .label-icon.budget
-          %label{for: "right-label"}= image_tag "icons/pricing.svg"
-        .sidebar-accordian
-          Pricing
-
-
-
-
-.l-main-content
+.main-content{:style => "min-height: 3000px;"}
   .off-canvas-wrap
     .inner-wrap
-      %a.left-off-canvas-toggle Menu
+      .grid-header
+        .grid-logo.show-for-small-only
+          = link_to "#" do
+            = image_tag "logo.png", :class => "logo-img"
+        %a.left-off-canvas-toggle.show-for-small-only <i class="fa fa-bars"></i> Filter
+        %ul.user-login.inline-list
+          %li= link_to "Request a Login", "#"
+          %li= link_to "Login", "#"
+        .shopping-cart
+          = image_tag "icons/cart.svg"
+        .show-for-medium-up
+          = render :partial => "gridFilters"
+
+
+
       / Off Canvas Menu
       %aside.left-off-canvas-menu
-        / whatever you want goes here
-        %ul
-          %li
-            %a{href: "#"} Item 1
-          \...
-      / main content goes here
-      %p Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire. Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has developed psychohistory, a new field of science and psychology that equates all possibilities in large societies to mathematics, allowing for the prediction of future events.
+        = render :partial => "sidebar"
+      %ul.restaurant-grid.small-block-grid-1.medium-block-grid-2.large-block-grid-3
+        - 12.times do
+          = render :partial => "gridBlock"
+
+
       / close the off-canvas menu
       %a.exit-off-canvas
-      
-:javascript
-  $(function() {
-     $(document).foundation();
-  });
+
