@@ -21,6 +21,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use Foundation Responsive Framework
 gem 'foundation-rails'
 
+# Use FontAwesome for icon fonts
+gem "font-awesome-rails"
+
 # Use HAML for html
 gem "haml-rails"
 

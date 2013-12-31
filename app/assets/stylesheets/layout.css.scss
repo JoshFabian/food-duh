@@ -1,1 +1,119 @@
 @import "globals/all";
+@import "foundation/components/grid";
+
+.l-sidebar {
+	@include grid-column(4);
+	padding-top: 30px;
+	@media (min-width: 790px) {
+		padding-left: 12%;
+		padding-right: 25px;
+	}
+	@media (max-width: 660px) {
+		display: none;
+	}
+
+	// Assumably persistent across all Sidebar due to lack of header
+	.fooda-logo {
+		margin-bottom: 20px;
+		.logo-img {
+			width: 100%;
+			max-width: 225px;
+			height: auto;
+		}
+	}
+
+	.sidebar-title {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		font-weight: normal;
+	}
+
+	// Sidebar Form Fields
+	.label-icon {
+		@include grid-column(1);
+		padding: 0;
+		label {
+			height: 25px;
+			width: 25px;
+			text-align: center;
+			img {
+				padding-top: 3px;
+			}
+		}
+
+		// These 'hacks' are necessary due to the icons used in this design not having consistent width and height. I don't have access to the illustrator files to create new, proportional icons based on the svgs being used here.
+		&.date {
+			label img {
+				padding-top: 6px;
+			}
+		}
+		&.budget {
+			label img {
+				padding-top: 6px;
+			}
+		}
+	}
+
+
+	.sidebar-input {
+		@include grid-column(11);
+		padding-right: 0;
+		padding-left: 10px;
+		input {
+			border-radius: 4px;
+			height: 30px;
+			margin-bottom: 10px;
+			box-shadow: none;
+		}
+	}
+
+	.postfix-input {
+		@include grid-column(9);
+		padding-left: 10px;
+		padding-right: 0;
+		input {
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+			height: 30px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.postfix-span {
+		@include grid-column(2);
+		padding: 0px;
+		span {
+			height: 30px;
+			line-height: 28px;
+		}
+	}
+
+	.sidebar-accordian {
+		@include grid-column(11);
+		padding-right: 0;
+		padding-left: 15px;
+		padding-bottom: 10px;
+		line-height: 30px;
+		font-size: 14px;
+		&:after {
+			position: absolute;
+			display: block;
+			font-family: FontAwesome;
+			content: "\f107";
+			font-size: 14px;
+			right: 0;
+			top: 0;
+		}
+	}
+}
+
+.l-main-content {
+	@include grid-column(8);
+	background-color: #fff;
+	border-left: 1px solid #e2e2e4;
+	min-height: 300px;
+	@media (max-width: 660px) {
+		width: 100%;
+		border-left: none;
+	}
+}

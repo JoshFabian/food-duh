@@ -1,7 +1,8 @@
 /*
+ *= require_self
  *= require foundation_and_overrides
-
  *= require ./base
  *= require ./layout
  *= require_tree ./modules
+ *= require font-awesome
  */
